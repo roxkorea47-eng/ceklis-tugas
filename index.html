@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ceklis Tugas</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#3d5afe">
+<meta name="theme-color" content="#f8f4fd">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -394,7 +394,7 @@ $('#form').addEventListener('submit',e=>{e.preventDefault();saveForm()});
 $('#f-title').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();saveForm()}});
 $('#f-title').addEventListener('input',()=>{$('#err').hidden=true});
 
-function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('ceklis-tema',t)}catch(e){}}
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelector('meta[name=theme-color]').content=t==='dark'?'#0e0a18':'#f8f4fd';try{localStorage.setItem('ceklis-tema',t)}catch(e){}}
 $('#theme').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
 
 $('#exp').onclick=()=>{
